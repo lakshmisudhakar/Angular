@@ -1,0 +1,358 @@
+CRUD PERATIONS:
+--------------
+1.Creating
+3.Updating
+4.Deleting
+
+prerequisites:
+--------------
+1.Angular CLI
+2.Angular
+3.Bootsrap
+
+Installing tools required:
+--------------------------
+1.Latest version of node: node -v
+2.Latest version of Angular CLI : ng v
+3.For visual code from Command : code.
+4.For web page from Command : ng projectname -o
+
+Bootstrap Install:
+----------------
+npm install bootstrap@3 --save
+           !
+       go to angular.json---add bootstrap dist path in styles
+FORMS:
+KEYWORS FOR LIST AND CREATE COMPONENTS.READING DATA AND FORMS
+-------------------------------------------------------------
+CREATE FOrm:
+-------------
+Two ways to crete forms in Angular:
+-----------------------------------
+1.Template Driven forms
+2.Model Driven Forms (Commonly called Reactive Forms)
+
+10.DatePicker:
+----------
+first we install Bootstrap
+step1.: npm install ngx-bootstrap --save
+step2.: npm install bootstrap@3 --save
+step3: open. angular.json file and specify the path to the bootstrap stylesheet (bootstrap.min.css)
+styles: [
+ "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+]
+    |
+ next in app.node_modules
+ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+ Note; we can also use bsDaterangepicker for 2 calenders
+
+ 11.Customise ngx bootsrap datepicker:
+ ------------------------------------
+ 1.color changing
+
+PhotoPath:
+---------
+Show Preview: 1.when we clicked show preview button every time update result in console.bcz we dont add type thats why this button treats as submit button.we solve this use type = button
+2.Dynamically set the text button: show preview , and hide preview.
+
+
+12.Disable Browser Validation:
+------------------------------
+1.By default, Angular 4 and later versions disable browser validation by automatically including novalidate attribute on the form tag.(check console to find novalidate attribute in forms)
+2.To explicity enable browser validation, include ngNativeValidate
+               -------                            ---------------
+directive on the form tag.
+3.example check the full name : put the required option.
+    IN CONSOLE----default disable browser validation --novalidate
+    then put ----in Form ------ngNativeValidate
+
+13.Angular form validation:
+--------------------------
+here cannot assign to a reference variable
+Angular form validation  Properties: 6propertis
+--------------------------------------
+touched --- untouched
+pristine----dirty
+valid ---------invalid
+Examples:
+<div class="form-group">
+<label for="fName">FullName</label>
+<input type="text" id="fName" name="fName" class="form-control" [(ngModel)]="fName" #fullNameControl="ngModel">
+</div>
+
+14.validation Error messages:
+----------------------------
+styles the error messages using Bootstrap
+How to disable submit button if the forms is not valid
+has-error
+control-label
+help-block
+
+15.Email validator & Pattern Validator:
+---------------------------------------
+1.Email validator:
+if email path is empy showing -----required
+if email id is not correct showing----invalid
+EXAMPLE:
+<span class="help-block" *ngIf="email.errors?.required && email.touched">email is required</span>
+  <span class="help-block" *ngIf="email.errors?.email && email.touched">email is invalid</span>
+2.Pattern validator:
+16.Radio button validation:
+---------------------------
+same like as email and contact_phone
+
+17.Add required attribute Dynamically in angular:
+------------------------------------------------
+Contact reference:
+Phone    email
+
+18.Checkbox and select list validation:
+--------------------------------------
+
+
+19.Angular value vs ngValue:
+----------------------------
+1.value: option value is a string then use the value property
+2.ngValue: option value is a null or object then use ngValue.
+
+[value]="dept.id"   like ids 1,2 ,3
+[ngValue]="dept"    like id:1,name: Finance
+
+
+20.SELECT lIST VALIDATION:
+--------------------------
+we select option validation by default its shown like a valid option (-1). there is no error shown.
+so in this case 2 types we have if select list default it will show required error.That is CUSTOM VALIDATOR
+value="null"
+it is taking like a value string in angular
+[ngValue]="null" it is taking as a null or object
+This is called as differece between value and ngValue
+But this is not correct way to bind default Select list selected for required attribute.
+CUSTOM VALIDATORS:
+-------------------
+1.Custom validator in Template Driven Forms:
+------------------------------------------
+two ways
+.not reuseble when change the value-1
+
+2.Required Custom Validator:
+--------------------------
+2.Reusable and configarable
+
+21.HOW TO COMPARE PASSWORDS :
+----------------------------
+1.password and Confirm password fields and validate.
+2.This is commonly called cross field validation in angular.
+
+
+22.Add and remove validation styles to a group of elements & Trigger validation manually:
+---------------------------------------------------------------------
+    FOR PASSWORD
+    -------------
+Use UpdateValueAndValidity()  function a formcontorls validation:
+ <input name="password"
+ (change)="confirmpassword.control.updateValueAndValidity()">
+
+   If we want the show not match error display when we are typing message
+    <input name="password"
+ (input)="confirmpassword.control.updateValueAndValidity()">
+
+  Another way of implementing Confirm Password Field validation:
+  -------------------------------------------------------------
+
+
+
+                       SERVICES
+                       --------
+SERVICES:
+----------
+1.why we need a SERVICE
+2.Creating a SERVICE
+3.Injecting and using the SERVICE
+4.Difference between constructor and ngOnInit1.
+
+
+  Creating
+  Registering
+  using a Service in Angular
+-----------------------------------------------------------------------
+Notes: 1.If we can register our Service in component then that will use only that component
+      2.we can register in our appModules that will use all the components.
+
+      1.Data service to component:
+      ---------------------------
+      steps:1.data in service
+            2.getemployee method for pass the data to component
+            3.in component write private and for receive data from service write return in ngOnInit.
+      2.Add data in list when we click save button in New component it will route "list":
+      ----------------------------------------------------------------------------------
+      steps:1.put a method in  serivice to add items
+          2.private service and router (forlist)
+          3.save method rewrite.
+
+ Angular Swith:
+ -------------
+1.ngSwitch
+2.SwithCase
+3.swithcDefault
+                   PASS DATA PARENT TO CHILD COMPONENT AND INPUT PROPERTY VALUE CHANGES(PROPERTYSETTER & NGONCHANGES)
+                   ----------------------------------------------------------------------------------------------------
+
+3.Pass Data parent to child component:
+-------------------------------------
+export class EmployeeChildComponent {
+@Input() employee: Employee;
+
+}
+In parent component:
+<div *ngFor="let employee of employees">
+<app-child [employee]="employee"></-child>
+</div>
+
+4.How to detect and react when component input property value changes:
+----------------------------------------------------------------------
+Two ways:
+1.Property Setter
+2.ngOnChanges Life Cycle Hook.
+
+Property Setter:
+steps:1.first we can do separate each one employee details and also add next button.
+
+
+5.ngOnchanges Life Cycle Hook:
+---------------------------
+in console we can see what changes in console when we click the next button.
+1.display data in console previous and current with simpleChanges
+2.second way ---display at first time Previous value -Null then display direct previous value and current value not simple changes
+
+
+6.Input change detection using property Setter:
+-----------------------------------------------
+Here 2  ways.
+1.get()
+2.set()
+
+7.property setter vs ngOnChanges:
+--------------------------------
+Property setter: property setter  is specific to a given input property.
+  @Input()
+  set employee(val: Employee) {
+    //  console.log('Previous: ' + (this._employee? this._employee.name : 'NULL'));
+    //  console.log('current: ' + val.name);
+    this._employee = val;
+  }
+  get employee(): Employee {
+    return this._employee;
+  }
+
+
+ngOnChanges:  We get all the changes , useful when multiple properties change.
+EX: private _employee: Employee;
+EX:ngOnChanges(changes: SimpleChanges) {
+  // console.log(changes);
+  //  const previousEmployee =<Employee>changes.employee.previousValue;
+  //  const currentEmployee =<Employee>changes.employee.currentValue;
+
+
+                PASS DATA CHILD TO PARENT
+                -------------------------
+1.@output() notify: EvenEmitter<string> = new EvenEmitter<string>();
+ what data we want pass to child to parent.
+ when we pass data to child to parent.
+we use event for pass data child to parent.
+2ways child to Parent:
+----------------------
+1.@output way
+2.call child component Methods and Properties using with Template reference.
+       in Templatereference variable 2 ways:
+       1.Methods(public method)
+       2.properties
+
+
+KUDVENKAT bytes:
+---------------
+Interpolation                        vs       property Binding
+--------------------------------------------------------------------
+<img src ="{{ image.path }}">                    <img [src]]="image.path">
+1.It is not suitable for string and booleans
+
+
+
+
+
+
+     HTTP SERVICES-Junaid Alam
+     -------------
+we have 2 mehthods
+1.get()
+2.post()
+get: get is read data like fetch data.
+post: post is write data like update data;
+get():
+-----
+This is typescript file
+Ex: country.http.service.ts
+
+2.post: sending data
+a.map()
+b.error handling
+
+
+  DIRECTIVES:
+  -----------
+1.  3types of CUSTOM ATTRIBUTE DIRECTIVES
+  1.components
+  2.Structural DIRECTIVES
+    a.custom attribute directives(Element Ref, HostListener)
+    b.custom structure directives(TemplateRef, ViewContainerRef):
+    like own property
+  3.Attribute Directives
+
+ 2.Structural Directives:
+ ------------------------
+ 1.*ngIf
+ 2.*ngSwithCase
+3.*ngFor
+
+3.Attribute Directive:
+---------------------
+In Component.html
+step:1.
+<h2 [ngStyle]="myStyle">This is Attribute Directive like [ngStyle]</h2>
+step:2.
+ In component.ts
+  public myStyle: {
+    color: 'blue',
+    background-color: 'yellow'
+  }
+
+
+2.CUSTOM STRUCTURE DIRECTIVES:
+----------------------------
+2types
+1.custom attribute Directives
+2.custom structure directives
+
+
+PIPES:
+------
+1.Normal PIPES
+2.custom-PIPES
+  In custom pipes we have pipe with parameters.
+  1.Pipe with parameter()
+
+
+
+1.NgModules:
+---------
+all modules and services and directives which are related to component.set in the one module like countries.module
+
+2.Lazy Modules:
+--------------
+same like as NgModules and also add routing also
+3.Routing:
+------------
+1.Routing
+2.Routing next child.
+3.RoutingParams()
+4.Routing Gaurd.
