@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'forms-codecraft';
 
   name = "Kaarthi";
+  date = new Date();
 }
