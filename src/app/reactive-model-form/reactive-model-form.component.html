@@ -1,0 +1,30 @@
+<h2 style="color: red;">reactive-model-form works!</h2>
+<input type="search"
+class="form-control"
+placeholder="Enter the search term"
+[formControl] ="serchField"
+>
+
+<hr>
+<p>To react to changes on this form we need to subscribe to the valueChanges observable on our searchField</p>
+<ul>
+  <li *ngFor ="let search of searchs">
+{{search}}
+  </li>
+</ul>
+
+<div>
+  <input type="search"
+class="form-control"
+placeholder="Enter the search term"
+[formControl] ="serchField"
+>
+
+<hr>
+<p>Ideally we want to only make a request when the user has stopped typing. This is a common use case with RxJS so there is an operator that implements it called debounceTime and we use it like so:</p>
+<ul>
+  <li *ngFor ="let search of searchs">
+{{search}}
+  </li>
+</ul>
+</div>
