@@ -1,10 +1,91 @@
-{{title}}
-<div class="container">
-<app-foms></app-foms>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Meal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <!-- <div *ngFor="let item of mealData | sanitizepipe:'idMeal,strMeal':query">{{item.strMeal}}</div> -->
+    </form>
+
+    
+  </div>
+</nav>
+
+<div class="container" *ngFor="let meal of mealData">
+  
+  <div class="card">
+    <div class="card-body">
+      <h4>{{meal.strMeal}}</h4>
+    </div>
+    <div class="card-body"><img [src]='meal.strMealThumb' width="300px" height="300px" /></div>
+    <div class="card-body"><b>Category:</b> {{meal.strCategory}}</div>
+    <div class="card-body"><b>Country:</b> {{meal.strArea}}</div>
+    <div class="card-body"><b>Ingridents:</b>
+      <table border="1">
+        <tr>
+          <td>{{meal.strIngredient1}}</td>
+          <td>{{meal.strMeasure1}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient2}}</td>
+          <td>{{meal.strMeasure2}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient3}}</td>
+          <td>{{meal.strMeasure3}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient4}}</td>
+          <td>{{meal.strMeasure4}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient5}}</td>
+          <td>{{meal.strMeasure5}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient6}}</td>
+          <td>{{meal.strMeasure6}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient7}}</td>
+          <td>{{meal.strMeasure7}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient8}}</td>
+          <td>{{meal.strMeasure8}}</td>
+        </tr>
+        <tr>
+          <td>{{meal.strIngredient9}}</td>
+          <td>{{meal.strMeasure9}}</td>
+        </tr>
+      </table>
+
+
+    </div>
+    <div class="card-body"><b>Instructions:</b> {{meal.strInstructions}}</div>
+    <div class="card-body"><iframe [src]='myYoutubeUrl' width="300px" height="300px" frameborder="0"
+        allowfullscreen></iframe></div>
+  </div>
 </div>
-<div class="container">
-  <app-template-forms></app-template-forms>
-</div>
-<div class="container">
-  <app-reactive-model-form></app-reactive-model-form>
-</div>
+
+<!-- <div *ngFor="let meal of mealData">
+  <h2>{{meal.strMeal}}</h2>
+  <p>{{meal.strCategory}}</p>
+  <p>{{meal.strArea}}</p>
+  <p>{{meal.strInstructions}}</p>
+  <div class="video-container">
+    <iframe [src]='myYoutubeUrl' width="300px" height="300px" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div><img [src]='meal.strMealThumb' width="300px" height="300px" /></div>
+</div> -->
