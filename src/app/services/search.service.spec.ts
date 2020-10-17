@@ -9,22 +9,19 @@ describe('SearchService', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [SearchService]
-    });
+    }).compileComponents();
 
     service = TestBed.inject(SearchService);
+
   });
 
-  // it('should be created', () => {
-  //   expect(service).toBeTruthy();
-  // });
+
 
   it('should be created', () => {
     // tslint:disable-next-line:no-shadowed-variable
     const service: SearchService = TestBed.get(SearchService);
     expect(service).toBeTruthy();
    });
-
-
 
   it(`should create`, async(inject([HttpTestingController, SearchService],
     (httpClient: HttpTestingController, apiService: SearchService) => {

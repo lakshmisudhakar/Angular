@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { SearchMeal } from 'src/app/model/search.interface';
 import { SearchService } from 'src/app/services/search.service';
 
@@ -8,10 +9,9 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  mealData: SearchMeal[];
-  loadData = false;
+  randomMealData: SearchMeal[];
 
-  constructor(private randomMealService: SearchService) {
+  constructor(private searchService: SearchService, private sanitizer: DomSanitizer) {
     this.getMealData();
   }
 
@@ -19,10 +19,9 @@ export class DashboardComponent implements OnInit {
   }
 
   getMealData() {
-    this.loadData = true;
-    this.randomMealService.getRandomMeal().subscribe((data) => {
+    this.searchService.getRandomMeal().subscribe((data) => {
       console.log(data);
-      this.mealData = data;
+      this.randomMealData = data;
     });
  }
 

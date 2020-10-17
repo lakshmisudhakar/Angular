@@ -5,12 +5,10 @@ import { SearchContainerComponent } from './components/search-container/search-c
 
 
 const routes: Routes = [
-   { path: '', component: DashboardComponent },
+  { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'searchmeal', component: SearchContainerComponent },
   { path: '**', redirectTo: '' }   // otherwise redirect to home
- 
-
 ];
 
 @NgModule({

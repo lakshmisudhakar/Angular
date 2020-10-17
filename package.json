@@ -9,10 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "jest": {
-    "preset": "jest-preset-angular",
-    "setupTestFrameworkScriptFile": "<rootDir>/setupJest.ts"
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.0",

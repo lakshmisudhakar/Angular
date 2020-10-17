@@ -1,11 +1,11 @@
     <app-search-input (search)="handleSearch($event)"></app-search-input>
 
     <div *ngIf="inputTouched == false && error == true">
-        <div class="alert alert-warning d-flex" role="alert" style="width:300px; margin: auto;">
-          <p ><strong>Sorry!</strong> No Info Found</p>
-        </div>
+      <div class="alert alert-info info">
+        <p><strong>Sorry!</strong> No info found</p>
+      </div>
     </div>
-    <br/>
+
 
     <div *ngIf="loading">
       <div class="d-flex justify-content-center">
@@ -15,4 +15,4 @@
       </div>
     </div>
 
-    <app-search-list *ngIf="!loading" [searchMeal]="searchMeal"></app-search-list>
+    <app-search-list *ngIf="!loading && error" [searchMeal]="searchMeal"></app-search-list>

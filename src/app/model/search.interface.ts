@@ -4,4 +4,5 @@ export interface SearchMeal {
     strInstructions: string;
     strMealThumb: string;
     strYoutube: string;
+   // tslint:disable-next-line:eofline
   }

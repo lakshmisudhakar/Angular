@@ -1,32 +1,33 @@
-
-
 <div class="container">
-<div class="card" *ngFor="let meal of searchMeal; let i = index">
-  <div class="card-header">
-    {{ meal.title }}
-  </div>
-  <div class="card-body">
-  <div class="row">
-    <div class="col">
-  <div>
-      <p class="card-text"><b>Ingredients:</b> {{ meal.strIngredient+i}} </p>
-      <p class="card-text"><b>Measures:</b> {{ meal.strMeasure1+i}} </p>
-      <p class="card-text">{{ meal.category}} </p>
-      <a [href]="meal.videoUrl" class="btn btn-danger" target="_blank">Watch Video</a>
+  <div class="card" *ngFor="let meal of searchMeal">
+    <div class="card-header font-weight-bold">
+      {{ meal.title }}
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+            <p class="card-text">{{ meal.category}} </p>
+            <p class="card-text"><b>Ingredients:</b> <br/>
+              {{ meal.measure1 }}  {{ meal.ingredient1 }}<br/>
+              {{ meal.measure2 }}  {{ meal.ingredient2 }}<br/>
+              {{ meal.measure3 }}  {{ meal.ingredient3 }}<br/>
+              {{ meal.measure4 }}  {{ meal.ingredient4 }}<br/>
+              {{ meal.measure5 }}  {{ meal.ingredient5 }}<br/>
+              {{ meal.measure6 }}  {{ meal.ingredient6 }}<br/>
+              {{ meal.measure7 }}  {{ meal.ingredient7 }}<br/>
+              {{ meal.measure8 }}  {{ meal.ingredient8 }}<br/>
+              {{ meal.measure9 }}  {{ meal.ingredient9 }}<br/>
+              {{ meal.measure10 }}  {{ meal.ingredient10 }}</p>
+            <a [href]="meal.videoUrl" class="btn btn-danger" target="_blank">Watch Video</a>
+          </div>
+        <div class="col">
+          <div class="card">
+            <img class="card-img-top" [src]="meal.imageThumb" alt="Meal image">
+          </div>
+        </div>
+      </div>
+      <h6 class="card-text">{{ meal.title }}</h6>
+      <p class="card-text"><b>Description:</b> {{ meal.instruction }}</p>
     </div>
   </div>
-
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" [src]="meal.imageThumb" alt="Meal image">
-    </div>
-    </div>
-  </div>
-
-
-    <h6 class="card-title">{{ meal.title }}</h6>
-    <p class="card-text"><b>Description:</b> {{ meal.description}}</p>
-   
-  </div>
-</div>
 </div>

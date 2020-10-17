@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,6 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  @Input() loadData = true;
 
   constructor() {
   }
