@@ -1,0 +1,3 @@
+.ui[class*="four column"].grid>.row>.column {
+    width: 100% !important;
+}

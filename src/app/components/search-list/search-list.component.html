@@ -1,0 +1,32 @@
+
+
+<div class="container">
+<div class="card" *ngFor="let meal of searchMeal; let i = index">
+  <div class="card-header">
+    {{ meal.title }}
+  </div>
+  <div class="card-body">
+  <div class="row">
+    <div class="col">
+  <div>
+      <p class="card-text"><b>Ingredients:</b> {{ meal.strIngredient+i}} </p>
+      <p class="card-text"><b>Measures:</b> {{ meal.strMeasure1+i}} </p>
+      <p class="card-text">{{ meal.category}} </p>
+      <a [href]="meal.videoUrl" class="btn btn-danger" target="_blank">Watch Video</a>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" [src]="meal.imageThumb" alt="Meal image">
+    </div>
+    </div>
+  </div>
+
+
+    <h6 class="card-title">{{ meal.title }}</h6>
+    <p class="card-text"><b>Description:</b> {{ meal.description}}</p>
+   
+  </div>
+</div>
+</div>

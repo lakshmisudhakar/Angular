@@ -1,0 +1,18 @@
+    <app-search-input (search)="handleSearch($event)"></app-search-input>
+
+    <div *ngIf="inputTouched == false && error == true">
+        <div class="alert alert-warning d-flex" role="alert" style="width:300px; margin: auto;">
+          <p ><strong>Sorry!</strong> No Info Found</p>
+        </div>
+    </div>
+    <br/>
+
+    <div *ngIf="loading">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <app-search-list *ngIf="!loading" [searchMeal]="searchMeal"></app-search-list>

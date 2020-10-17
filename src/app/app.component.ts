@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { RandomMealService } from './services/random-meal.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, Input } from '@angular/core';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,30 +7,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'meal';
 
-  mealData;
-  myYoutubeUrl;
-  byPassResourceUrl;
-  youtubeLink;
+  @Input() loadData = true;
 
-  constructor(
-    private randomMeal: RandomMealService,
-    private sanitizer: DomSanitizer) {
-        this.getMealData();
+  constructor() {
   }
-
-  getMealData() {
-     this.randomMeal.getRandomMeal().subscribe((data) => {
-       console.log(data);
-       // tslint:disable-next-line:no-string-literal
-       this.mealData = data['meals'];
-
-       this.youtubeLink = this.mealData[0].strYoutube;
-       this.byPassResourceUrl = this.youtubeLink.replace('/watch?v=', '/embed/'); // replace watch to embed
-       this.myYoutubeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.byPassResourceUrl);
-
-     });
-  }
-
 }

@@ -1,5 +1,11 @@
-# Meal
+# Meal Application with Angular
+A single‐page web application which allows users to browse Recipes. It uses the following open api: https://www.themealdb.com/api.php
+You can search reciepe items from the search bar.
 
+## Installations
+## Angular CLI
+https://cli.angular.io/
+https://angular.io/
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
 
 ## Development server

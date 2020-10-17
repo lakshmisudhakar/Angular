@@ -7,13 +7,20 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { RandomMealService } from './services/random-meal.service';
-import { SanitizepipePipe } from './pipes/sanitizepipe.pipe';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+import { SearchListComponent } from './components/search-list/search-list.component';
+import { SearchContainerComponent } from './components/search-container/search-container.component';
+import { SearchService } from './services/search.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SanitizepipePipe
+    SearchInputComponent,
+    SearchListComponent,
+    SearchContainerComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,7 @@ import { SanitizepipePipe } from './pipes/sanitizepipe.pipe';
     HttpClientModule,
     FormsModule
   ],
-  providers: [RandomMealService],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,9 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "jest",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/setupJest.ts"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
     "bootstrap": "^4.5.2",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
@@ -31,12 +36,14 @@
     "@angular/cli": "~9.0.0",
     "@angular/compiler-cli": "~9.0.0",
     "@angular/language-service": "~9.0.0",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^26.5.3",
+    "jest-preset-angular": "^8.3.1",
     "karma": "~4.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
