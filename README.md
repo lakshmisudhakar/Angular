@@ -18,7 +18,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
@@ -33,10 +34,20 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
+### Search Reciepe Items
+Dashboard is the landing page of the application and disaplying the random Meal Data.
+When the user click Search meal nav and input box from the search results, the details of that meal shows:
+• Name of the dish
+• Image of the dish
+• Optional video of how to prepare the dish
+• A List of ingredients including measures
+• Instructions how to prepare the dish
+
+
 ### Project dependencies and devDependencies ------------
 
 1. Bootstrap :
-   With Bootstrap we can build responsive, mobile-first, and ARIA accessible projects on the web using Angular and the world's most popular front-end CSS library — Bootstrap v4.5.2.
+   With Bootstrap we can build responsive, mobile-first on the web using Angular and the world's most popular front-end CSS library — Bootstrap v4.5.2.
    Please refer below url for more details:
    https://getbootstrap.com/
    

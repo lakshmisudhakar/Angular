@@ -20,7 +20,6 @@ export class DashboardComponent implements OnInit {
 
   getMealData() {
     this.searchService.getRandomMeal().subscribe((data) => {
-      console.log(data);
       this.randomMealData = data;
     });
  }

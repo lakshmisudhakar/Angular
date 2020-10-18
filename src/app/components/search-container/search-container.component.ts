@@ -10,10 +10,10 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchContainerComponent  {
 
+  searchMeal: SearchMeal[];
+  itemsEmpty = false;
   inputTouched = false;
   loading = false;
-  searchMeal: SearchMeal[];
-  error = false;
 
   constructor(private searchService: SearchService, private sanitizer: DomSanitizer) { }
 
@@ -23,7 +23,7 @@ export class SearchContainerComponent  {
       .subscribe((items: any) => {
         console.log(items);
         if (items === null || items === '') {
-          this.error = true;
+          this.itemsEmpty = true;
           this.loading = false;
           this.inputTouched = false;
           return;
@@ -56,7 +56,6 @@ export class SearchContainerComponent  {
             measure9: item.strMeasure9
           };
         });
-        console.log(this.searchMeal);
         this.inputTouched = true;
         this.loading = false;
       });

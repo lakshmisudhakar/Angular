@@ -1,6 +1,6 @@
     <app-search-input (search)="handleSearch($event)"></app-search-input>
 
-    <div *ngIf="inputTouched == false && error == true">
+    <div *ngIf="!inputTouched && itemsEmpty">
       <div class="alert alert-info info">
         <p><strong>Sorry!</strong> No info found</p>
       </div>
@@ -15,4 +15,6 @@
       </div>
     </div>
 
-    <app-search-list *ngIf="!loading && error" [searchMeal]="searchMeal"></app-search-list>
+    <div *ngIf="!itemsEmpty || inputTouched">
+    <app-search-list *ngIf="!loading" [searchMeal]="searchMeal"></app-search-list>
+    </div>
