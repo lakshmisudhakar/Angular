@@ -21,7 +21,6 @@ export class SearchContainerComponent  {
     this.loading = true;
     this.searchService.getSearchMeal(inputValue)
       .subscribe((items: any) => {
-        console.log(items);
         if (items === null || items === '') {
           this.itemsEmpty = true;
           this.loading = false;

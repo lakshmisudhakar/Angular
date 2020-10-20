@@ -11,21 +11,21 @@ body {
 
 /* Global */
 .container {
-  width: 75%;
+  width: 60%;
   margin: auto;
   overflow: hidden;
 }
 
 
 /* Nav Bar */
-#meal_nav {
+#meal-nav {
   background: #35424a;
   color: #ffffff;
   height: 5em;
   border-bottom: #e8491d 3px solid;
 }
 
-.meal_name {
+.meal-name {
   margin-left: 50px;
   color: brown;
   font-weight: bold;
@@ -38,8 +38,30 @@ a,
 input {
   font-size: 12px !important;
   text-align: justify;
+  line-height: 20px; 
+}
+.search-input{
+ width: 300px;
+}
+ul {
+  padding: 0;
 }
 
+ul li{
+  list-style-type: none;
+   line-height: 18px; 
+  word-spacing: 2px;
+   
+}
+.ingredient-headding{
+  margin-bottom: auto;
+  padding-bottom: 5px;
+}
+
+.img-size{
+  width: 280px;
+   height:200px;
+}
 
 .info {
   width: 250px;
@@ -54,4 +76,9 @@ input {
   background-size: cover;
   width: 100%;
   height: 100vh;
+  top:0px; bottom: 0px;
+    height: 100%;
+    background-repeat: repeat;
+    position: absolute;
+    overflow-x: scroll;
 }

@@ -1,37 +1,40 @@
-  <div class="container">
+  <div class="container overflow-auto">
     <div class="card" *ngFor="let meal of randomMealData">
       <div class="card-header font-weight-bold">
         {{ meal.strMeal }}
       </div>
       <div class="card-body">
-      <div class="row">
-        <div class="col">
-        <p class="card-text">{{ meal.strCategory}} </p>
-          <p class="card-text"><b>Ingredients:</b> <br/>
-            {{ meal.strMeasure1 }}  {{ meal.strIngredient1 }}<br/>
-            {{ meal.strMeasure2 }}  {{ meal.strIngredient2 }}<br/>
-            {{ meal.strMeasure3 }}  {{ meal.strIngredient3 }}<br/>
-            {{ meal.strMeasure4 }}  {{ meal.strIngredient4 }}<br/>
-            {{ meal.strMeasure5 }}  {{ meal.strIngredient5 }}<br/>
-            {{ meal.strMeasure6 }}  {{ meal.strIngredient6 }}<br/>
-            {{ meal.strMeasure7 }}  {{ meal.strIngredient7 }}<br/>
-            {{ meal.strMeasure8 }}  {{ meal.strIngredient8 }}<br/>
-            {{ meal.strMeasure9 }}  {{ meal.strIngredient9 }}<br>
-            {{ meal.strMeasure9 }}  {{ meal.strIngredient9 }}<br>
-            {{ meal.strMeasure10 }} {{ meal.strIngredient10 }}
-          </p>   
-          <a [href]="meal.strYoutube" class="btn btn-danger" target="_blank">Watch Video</a>
-      </div>
-    
-      <div class="col">
-        <div class="card">
-          <img class="card-img-top" [src]="meal.strMealThumb" alt="Meal image">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-text">{{ meal.strCategory}}</h5>
+            <p class="card-text" class="ingredient-headding"> <b>Ingredients:</b> </p>
+            <ul class="card-text">
+              <li> {{ meal.strMeasure1 }} {{ meal.strIngredient1 }}</li>
+              <li> {{ meal.strMeasure2 }} {{ meal.strIngredient2 }}</li>
+              <li>{{ meal.strMeasure3 }} {{ meal.strIngredient3 }}</li>
+              <li>{{ meal.strMeasure4 }} {{ meal.strIngredient4 }}</li>
+              <li> {{ meal.strMeasure5 }} {{ meal.strIngredient5 }}</li>
+              <li>{{ meal.strMeasure6 }} {{ meal.strIngredient6 }}</li>
+              <li> {{ meal.strMeasure7 }} {{ meal.strIngredient7 }}</li>
+              <li> {{ meal.strMeasure8 }} {{ meal.strIngredient8 }}</li>
+              <li>{{ meal.strMeasure9 }} {{ meal.strIngredient9 }}</li>
+              <li>{{ meal.strMeasure9 }} {{ meal.strIngredient9 }}</li>
+              <li>{{ meal.strMeasure10 }} {{ meal.strIngredient10 }}</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img class="card-img-top" class="img-size" [src]="meal.strMealThumb" alt="Meal image">
+            </div>
+            <br>
+            <div>
+              <a [href]="meal.strYoutube" class="btn btn-danger" target="_blank">Watch Video</a>
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
+        <br>
         <h6 class="card-text">{{ meal.strMeal }}</h6>
         <p class="card-text"><b>Description:</b> {{ meal.strInstructions}}</p>
       </div>
     </div>
-    </div>
-
+  </div>
